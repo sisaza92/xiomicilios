@@ -135,6 +135,7 @@ namespace Datos
 
         }
     }
+}
 
 //        public Entidades.Cliente BuscarIdCliente(string Documento)
 //        {
