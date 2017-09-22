@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ProductoDAO
+    public class ProductoDAO
     {
-        public IList<Entidades.Producto> ListarProductos()
+        public IList<Entidades.Producto> ListarProductos(long idCategoria)
         {
             Conectividad aux = new Conectividad();
             SqlCommand cmd = new SqlCommand();
             {
                 cmd.Connection = aux.conectar();
+                cmd.Parameters.Add(new SqlParameter("@idCategoria", idCategoria));
                 cmd.CommandText = "spr_productos_por_categoria";
                 cmd.CommandType = CommandType.StoredProcedure;
             };

@@ -15,5 +15,23 @@ namespace WcfService1
         [OperationContract]
         [WebInvoke(Method = "*", ResponseFormat = WebMessageFormat.Json, UriTemplate = "registrarUsuario")]
         void RegistrarUsuario(Entidades.Cliente cliente);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, UriTemplate = "listarProductos/{idCategoria}")]
+        IList<Entidades.Producto> ListarProductos(String idCategoria);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, UriTemplate = "listarCategorias")]
+        IList<Entidades.Categoria> ListarCategorias();
+
+        [OperationContract]
+        [WebInvoke(Method = "*", ResponseFormat = WebMessageFormat.Json, UriTemplate = "login")]
+        Entidades.Cliente Login(String usuario, String contrasena);
+
+        [OperationContract]
+        [WebInvoke(Method = "*", ResponseFormat = WebMessageFormat.Json, UriTemplate = "actualizarPerfil")]
+        Entidades.Cliente ActualizarPerfil(Entidades.Cliente cliente);
     }
+
+
 }

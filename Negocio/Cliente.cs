@@ -15,6 +15,12 @@ namespace Negocio
             //BuscarCliente(); 
 
         }
+
+        public Entidades.Cliente Login(string usuario, string contrasena)
+        {
+            Datos.Cliente datoCliente = new Datos.Cliente();
+            return datoCliente.Login(usuario, contrasena);
+        }
         //public IList<Entidades.Cliente> BuscarCliente()
         //{
         //    IList<Entidades.Cliente> todosClientes = new List<Entidades.Cliente>();

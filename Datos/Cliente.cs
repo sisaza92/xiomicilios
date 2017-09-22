@@ -38,6 +38,46 @@ namespace Datos
 
         }
 
+        public Entidades.Cliente Login(string usuario, string contrasena)
+        {
+            Conectividad aux = new Conectividad();
+            SqlCommand cmd = new SqlCommand();
+            {
+                cmd.Connection = aux.conectar();
+                cmd.Parameters.Add(new SqlParameter("@usuario", usuario));
+                cmd.Parameters.Add(new SqlParameter("@contrasena", contrasena));
+                cmd.CommandText = "spr_login";
+                cmd.CommandType = CommandType.StoredProcedure;
+            };
+
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+
+            Entidades.Cliente cliente = null;
+            while (sqlDataReader.Read())
+            {
+                cliente = new Entidades.Cliente
+                {
+                    IdCliente = int.Parse(sqlDataReader["idCliente"].ToString().Trim()),
+                    NombreCliente = sqlDataReader["nombreCliente"].ToString().Trim(),
+                    Apellido = sqlDataReader["apellido"].ToString().Trim(),
+                    Usuario = sqlDataReader["usuario"].ToString().Trim(),
+                    ActivoCliente = bool.Parse(sqlDataReader["usuario"].ToString().Trim()),
+                    Ciudad = sqlDataReader["ciudad"].ToString().Trim(),
+                    Contrasena = sqlDataReader["contrasena"].ToString().Trim(),
+                    Correo = sqlDataReader["corre"].ToString().Trim(),
+                    Direccion = sqlDataReader["direccion"].ToString().Trim(),
+                    FechaCliente = DateTime.Parse(sqlDataReader["fechaCliente"].ToString().Trim()),
+                    Telefono = sqlDataReader["telefono"].ToString().Trim()
+                };
+            }
+
+            aux.conectar();
+
+            return cliente;
+
+        }
+    }
+
         //public void BuscarCliente(Entidades.Cliente clienteList)
         //{
         //    throw new NotImplementedException();

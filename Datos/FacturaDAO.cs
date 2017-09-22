@@ -29,7 +29,7 @@ namespace Datos
             sqlCommand.Connection = conectividad.conectar();
 
             sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_ID_FACTURA, factura.IdFactura));
-            sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_ID_USUARIO, factura.Cliente.IdCliente));
+            sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_ID_USUARIO, factura.IdCliente));
             sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_TOTAL, factura.Total));
             sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_FECHA_FACTURA, factura.FechaFactura));
             sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_ACTIVO_FACTURA, factura.ActivoFactura));
