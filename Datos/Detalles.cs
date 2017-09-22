@@ -26,7 +26,7 @@ namespace Datos
             cmd.Parameters.Add(new SqlParameter("@precioUnitario", detalle.PrecioUnitario));
             cmd.Parameters.Add(new SqlParameter("@subtotal", detalle.Subtotal));
             cmd.Parameters.Add(new SqlParameter("@cantidad", detalle.Cantidad));
-            cmd.Parameters.Add(new SqlParameter("@factura", detalle.Factura));
+            cmd.Parameters.Add(new SqlParameter("@factura", detalle.IdFactura));
             //cmd.Parameters.Add(new SqlParameter("@fechaUsuario", cliente.FechaCliente));
             cmd.CommandText = "spr_InsertarDetalle";
             cmd.CommandType = CommandType.StoredProcedure;
