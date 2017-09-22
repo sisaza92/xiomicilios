@@ -14,7 +14,7 @@ namespace Entidades
         [DataMember]
         private long idProducto;
         [DataMember]
-        private long idCategoria;
+        private Categoria categoria;
         [DataMember]
         private string nombreProducto;
         [DataMember]
@@ -33,10 +33,10 @@ namespace Entidades
 
         }
 
-        public Producto(long idProducto, long idCategoria, string nombreProducto, byte imagenProducto, int precioProducto, string descripcion, DateTime fechaProducto, bool activoProducto)
+        public Producto(long idProducto, Categoria categoria, string nombreProducto, byte imagenProducto, int precioProducto, string descripcion, DateTime fechaProducto, bool activoProducto)
         {
             this.idProducto = idProducto;
-            this.idCategoria = idCategoria;
+            this.categoria = categoria;
             this.nombreProducto = nombreProducto;
             this.imagenProducto = imagenProducto;
             this.precioProducto = precioProducto;
@@ -46,7 +46,7 @@ namespace Entidades
         }
 
         public long IdProducto { get => idProducto; set => idProducto = value; }
-        public long IdCategoria { get => idCategoria; set => idCategoria = value; }
+        public Categoria Categoria{ get => categoria; set => categoria = value; }
         public string NombreProducto { get => nombreProducto; set => nombreProducto = value; }
         public byte ImagenProducto { get => imagenProducto; set => imagenProducto = value; }
         public int PrecioProducto { get => precioProducto; set => precioProducto = value; }

@@ -14,9 +14,9 @@ namespace Entidades
         [DataMember]
         private long idDetalle;
         [DataMember]
-        private long idProducto;
+        private Producto producto;
         [DataMember]
-        private long idFactura;
+        private Factura factura;
         [DataMember]
         private int cantidad;
         [DataMember]
@@ -24,19 +24,19 @@ namespace Entidades
         [DataMember]
         private double subtotal;
 
-        public Detalle(long idDetalle, long idProducto, long idFactura, int cantidad, double precioUnitario, double subtotal)
+        public Detalle(long idDetalle, Producto producto, Factura factura, int cantidad, double precioUnitario, double subtotal)
         {
-            this.IdDetalle = idDetalle;
-            this.IdProducto = idProducto;
-            this.IdFactura = idFactura;
-            this.Cantidad = cantidad;
-            this.PrecioUnitario = precioUnitario;
-            this.Subtotal = subtotal;
+            this.idDetalle = idDetalle;
+            this.producto = producto;
+            this.factura = factura;
+            this.cantidad = cantidad;
+            this.precioUnitario = precioUnitario;
+            this.subtotal = subtotal;
         }
 
         public long IdDetalle { get => idDetalle; set => idDetalle = value; }
-        public long IdProducto { get => idProducto; set => idProducto = value; }
-        public long IdFactura { get => idFactura; set => idFactura = value; }
+        public Producto Producto { get => producto; set => producto = value; }
+        public Factura Factura { get => factura; set => factura = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public double PrecioUnitario { get => precioUnitario; set => precioUnitario = value; }
         public double Subtotal { get => subtotal; set => subtotal = value; }

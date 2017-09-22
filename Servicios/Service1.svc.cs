@@ -24,7 +24,7 @@ namespace Servicios
         public Entidades.Cliente DoWork()
         {
             Entidades.Cliente cliente = new Entidades.Cliente();
-            cliente.NombreUsuario = "fran";
+            cliente.NombreCliente = "fran";
             cliente.Apellido = "fabra";
             // Add your operation implementation here
             return cliente;

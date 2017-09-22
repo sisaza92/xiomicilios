@@ -9,26 +9,27 @@ namespace Entidades
 {
     [DataContract]
     public class Factura
+
     {
         [DataMember]
-        long idFactura;
+        private long idFactura;
         [DataMember]
-        long idUsuario;
+        private Cliente cliente;
         [DataMember]
-        Double total;
+        private Double total;
         [DataMember]
-        DateTime fechaFactura;
+        private DateTime fechaFactura;
         [DataMember]
-        bool activoFactura;
+        private bool activoFactura;
 
         public Factura()
         {
         }
 
-        public Factura(long idFactura, long idUsuario, double total, DateTime fechaFactura, bool activoFactura)
+        public Factura(long idFactura, Cliente cliente, double total, DateTime fechaFactura, bool activoFactura)
         {
             this.idFactura = idFactura;
-            this.idUsuario = idUsuario;
+            this.cliente = cliente;
             this.total = total;
             this.fechaFactura = fechaFactura;
             this.activoFactura = activoFactura;
@@ -36,7 +37,7 @@ namespace Entidades
 
 
         public long IdFactura { get => idFactura; set => idFactura = value; }
-        public long IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
         public double Total { get => total; set => total = value; }
         public DateTime FechaFactura { get => fechaFactura; set => fechaFactura = value; }
         public bool ActivoFactura { get => activoFactura; set => activoFactura = value; }

@@ -23,14 +23,13 @@ namespace Datos
 
         public void InsertarFactura(Entidades.Factura factura)
         {
-
             conectividad = new Conectividad();
 
             sqlCommand = new SqlCommand();
             sqlCommand.Connection = conectividad.conectar();
 
             sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_ID_FACTURA, factura.IdFactura));
-            sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_ID_USUARIO, factura.IdUsuario));
+            sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_ID_USUARIO, factura.Cliente.IdCliente));
             sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_TOTAL, factura.Total));
             sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_FECHA_FACTURA, factura.FechaFactura));
             sqlCommand.Parameters.Add(new SqlParameter("@" + COLUMN_ACTIVO_FACTURA, factura.ActivoFactura));
