@@ -10,7 +10,7 @@ using Entidades;
 
 namespace Datos
 {
-    class Categoria
+  public  class Categoria
     {
         public void ListarCategoria(Entidades.Categoria categoriaList)
         {
