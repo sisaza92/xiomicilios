@@ -14,7 +14,7 @@ namespace Entidades
         [DataMember]
         private long idFactura;
         [DataMember]
-        private Cliente cliente;
+        private long idCliente;
         [DataMember]
         private Double total;
         [DataMember]
@@ -26,18 +26,17 @@ namespace Entidades
         {
         }
 
-        public Factura(long idFactura, Cliente cliente, double total, DateTime fechaFactura, bool activoFactura)
+        public Factura(long idFactura, long idCliente, double total, DateTime fechaFactura, bool activoFactura)
         {
             this.idFactura = idFactura;
-            this.cliente = cliente;
+            this.idCliente = idCliente;
             this.total = total;
             this.fechaFactura = fechaFactura;
             this.activoFactura = activoFactura;
         }
 
-
         public long IdFactura { get => idFactura; set => idFactura = value; }
-        public Cliente Cliente { get => cliente; set => cliente = value; }
+        public long IdCliente { get => idCliente; set => idCliente = value; }
         public double Total { get => total; set => total = value; }
         public DateTime FechaFactura { get => fechaFactura; set => fechaFactura = value; }
         public bool ActivoFactura { get => activoFactura; set => activoFactura = value; }

@@ -14,13 +14,13 @@ namespace Entidades
         [DataMember]
         private long idProducto;
         [DataMember]
-        private Categoria categoria;
+        private long idCategoria;
         [DataMember]
         private string nombreProducto;
         [DataMember]
         private byte imagenProducto;
         [DataMember]
-        private int precioProducto;
+        private Double precioProducto;
         [DataMember]
         private string descripcion;
         [DataMember]
@@ -33,10 +33,10 @@ namespace Entidades
 
         }
 
-        public Producto(long idProducto, Categoria categoria, string nombreProducto, byte imagenProducto, int precioProducto, string descripcion, DateTime fechaProducto, bool activoProducto)
+        public Producto(long idProducto, long idCategoria, string nombreProducto, byte imagenProducto, double precioProducto, string descripcion, DateTime fechaProducto, bool activoProducto)
         {
             this.idProducto = idProducto;
-            this.categoria = categoria;
+            this.idCategoria = idCategoria;
             this.nombreProducto = nombreProducto;
             this.imagenProducto = imagenProducto;
             this.precioProducto = precioProducto;
@@ -46,10 +46,10 @@ namespace Entidades
         }
 
         public long IdProducto { get => idProducto; set => idProducto = value; }
-        public Categoria Categoria{ get => categoria; set => categoria = value; }
+        public long IdCategoria { get => idCategoria; set => idCategoria = value; }
         public string NombreProducto { get => nombreProducto; set => nombreProducto = value; }
         public byte ImagenProducto { get => imagenProducto; set => imagenProducto = value; }
-        public int PrecioProducto { get => precioProducto; set => precioProducto = value; }
+        public double PrecioProducto { get => precioProducto; set => precioProducto = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public DateTime FechaProducto { get => fechaProducto; set => fechaProducto = value; }
         public bool ActivoProducto { get => activoProducto; set => activoProducto = value; }

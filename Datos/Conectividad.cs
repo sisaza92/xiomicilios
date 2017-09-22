@@ -14,7 +14,7 @@ namespace Datos
 
         public SqlConnection conectar()
         {
-            cadenaConexion = "Data Source=CPX-FECPH8SCBVV; Initial Catalog = FinalNet; Integrated Security = True";
+            cadenaConexion = "Data Source=CPX-EKSBMVNVVTM; Initial Catalog = Xiomicilios; Integrated Security = True";
             SqlConnection con = new SqlConnection(cadenaConexion);
             try
             {

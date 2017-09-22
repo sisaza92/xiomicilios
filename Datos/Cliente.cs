@@ -14,8 +14,6 @@ namespace Datos
         public void InsertarCliente(Entidades.Cliente cliente)
         {
 
-
-
             Conectividad aux = new Conectividad();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = aux.conectar();
@@ -33,7 +31,7 @@ namespace Datos
             cmd.Parameters.Add(new SqlParameter("@activoUsuario", cliente.ActivoCliente));
             cmd.Parameters.Add(new SqlParameter("@telefono", cliente.Telefono));
             cmd.Parameters.Add(new SqlParameter("@fechaUsuario", cliente.FechaCliente));
-            cmd.CommandText = "spr_InsertarCliente";
+            cmd.CommandText = "spr_registrar_usuario";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.ExecuteNonQuery();
             aux.conectar();
