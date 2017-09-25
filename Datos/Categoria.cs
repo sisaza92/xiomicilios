@@ -34,7 +34,7 @@ namespace Datos
                     NombreCategoria = sqlDataReader["nombreCategoria"].ToString().Trim(),
                     FechaCategoria = DateTime.Parse( sqlDataReader["fechaCategoria"].ToString()),
                     ActivoCategoria = bool.Parse( sqlDataReader["activoCategoria"].ToString()),
-                    //ImagenCategoria =sqlDataReader["imagenCategoria"].ToString(), falta convertir imagen
+                    ImagenCategoria = (byte[]) sqlDataReader["imagenCategoria"],
                     //Activo = bool.Parse(sqlDataReader["activo"].ToString())  
                     //SegundoApellido = sqlDataReader[COLUMN_SEGUNDO_APELLIDO].ToString(),
                     //FechaNacimiento = new DateTime(),

@@ -13,7 +13,7 @@ namespace Servicios
     public interface IServicioXiomicilios
     {
         [OperationContract]
-        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "registrarUsuario")]
+        [WebInvoke(Method = "*", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "registrarUsuario")]
         void RegistrarUsuario(Entidades.Cliente cliente);
 
         [OperationContract]
@@ -25,11 +25,11 @@ namespace Servicios
         IList<Entidades.Categoria> ListarCategorias();
 
         [OperationContract]
-        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,BodyStyle =WebMessageBodyStyle.Wrapped, UriTemplate = "login")]
+        [WebInvoke(Method = "*", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,BodyStyle =WebMessageBodyStyle.Wrapped, UriTemplate = "login")]
         Entidades.Cliente Login(String usuario, String contrasena);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", RequestFormat =WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "actualizarPerfil")]
+        [WebInvoke(Method = "*", RequestFormat =WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "actualizarPerfil")]
         void ActualizarPerfil(Entidades.Cliente cliente);
 
     }
