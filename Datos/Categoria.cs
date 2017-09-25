@@ -11,19 +11,14 @@ using Entidades;
 namespace Datos
 {
   public  class Categoria
-    {
-        public void ListarCategoria(Entidades.Categoria categoriaList)
-        {
-            throw new NotImplementedException();
-        }
-
+    { 
         public IList<Entidades.Categoria> ListarCategoria()
         {
             Conectividad aux = new Conectividad();
             SqlCommand cmd = new SqlCommand();
             {
                 cmd.Connection = aux.conectar();
-                cmd.CommandText = "spr_ListarCategorias";
+                cmd.CommandText = "spr_listar_categorias";
                 cmd.CommandType = CommandType.StoredProcedure;
             };
 

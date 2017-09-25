@@ -6,31 +6,32 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace WcfService1
+namespace Servicios
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IServicioXiomicilios" in both code and config file together.
     [ServiceContract]
     public interface IServicioXiomicilios
     {
         [OperationContract]
-        [WebInvoke(Method = "*", ResponseFormat = WebMessageFormat.Json, UriTemplate = "registrarUsuario")]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "registrarUsuario")]
         void RegistrarUsuario(Entidades.Cliente cliente);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, UriTemplate = "listarProductos/{idCategoria}")]
+        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "listarProductos/{idCategoria}")]
         IList<Entidades.Producto> ListarProductos(String idCategoria);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, UriTemplate = "listarCategorias")]
+        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "listarCategorias")]
         IList<Entidades.Categoria> ListarCategorias();
 
         [OperationContract]
-        [WebInvoke(Method = "*", ResponseFormat = WebMessageFormat.Json, UriTemplate = "login")]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,BodyStyle =WebMessageBodyStyle.Wrapped, UriTemplate = "login")]
         Entidades.Cliente Login(String usuario, String contrasena);
 
         [OperationContract]
-        [WebInvoke(Method = "*", ResponseFormat = WebMessageFormat.Json, UriTemplate = "actualizarPerfil")]
-        Entidades.Cliente ActualizarPerfil(Entidades.Cliente cliente);
+        [WebInvoke(Method = "POST", RequestFormat =WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "actualizarPerfil")]
+        void ActualizarPerfil(Entidades.Cliente cliente);
+
     }
 
 

@@ -6,20 +6,22 @@ using System.ServiceModel;
 using System.Text;
 using Entidades;
 
-namespace WcfService1
+namespace Servicios
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ServicioXiomicilios" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select ServicioXiomicilios.svc or ServicioXiomicilios.svc.cs at the Solution Explorer and start debugging.
     public class ServicioXiomicilios : IServicioXiomicilios
     {
-        public Cliente ActualizarPerfil(Cliente cliente)
+        public void ActualizarPerfil(Cliente cliente)
         {
-            throw new NotImplementedException();
+            Negocio.Cliente negocioCliente = new Negocio.Cliente();
+            negocioCliente.InsertarCliente(cliente);
         }
 
         public IList<Categoria> ListarCategorias()
         {
-            throw new NotImplementedException();
+            Negocio.Categoria negocioCategoria = new Negocio.Categoria();
+            return negocioCategoria.ListarCategoria();
         }
 
         public IList<Producto> ListarProductos(string idCategoria)
@@ -39,5 +41,6 @@ namespace WcfService1
             Negocio.Cliente negocioCliente = new Negocio.Cliente();
             negocioCliente.InsertarCliente(cliente);
         }
+
     }
 }

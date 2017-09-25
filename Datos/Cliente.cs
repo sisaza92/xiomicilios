@@ -21,14 +21,12 @@ namespace Datos
             parametroNombre.ParameterName = "@nombreUsuario";
             parametroNombre.Value = cliente.NombreCliente;
             cmd.Parameters.Add(parametroNombre);
-            cmd.Parameters.Add(new SqlParameter("@Apellido", cliente.Apellido));
-            cmd.Parameters.Add(new SqlParameter("@Ciudad", cliente.Ciudad));
-            cmd.Parameters.Add(new SqlParameter("@Correo", cliente.Correo));
+            cmd.Parameters.Add(new SqlParameter("@apellido", cliente.Apellido));
+            cmd.Parameters.Add(new SqlParameter("@ciudad", cliente.Ciudad));
+            cmd.Parameters.Add(new SqlParameter("@correo", cliente.Correo));
             cmd.Parameters.Add(new SqlParameter("@usuario", cliente.Usuario));
-            cmd.Parameters.Add(new SqlParameter("@idUsuario", cliente.IdCliente));
             cmd.Parameters.Add(new SqlParameter("@contrasena", cliente.Contrasena));
             cmd.Parameters.Add(new SqlParameter("@direccion", cliente.Direccion));
-            cmd.Parameters.Add(new SqlParameter("@activoUsuario", cliente.ActivoCliente));
             cmd.Parameters.Add(new SqlParameter("@telefono", cliente.Telefono));
             cmd.Parameters.Add(new SqlParameter("@fechaUsuario", cliente.FechaCliente));
             cmd.CommandText = "spr_registrar_usuario";
@@ -57,16 +55,16 @@ namespace Datos
             {
                 cliente = new Entidades.Cliente
                 {
-                    IdCliente = int.Parse(sqlDataReader["idCliente"].ToString().Trim()),
-                    NombreCliente = sqlDataReader["nombreCliente"].ToString().Trim(),
+                    IdCliente = int.Parse(sqlDataReader["idUsuario"].ToString().Trim()),
+                    NombreCliente = sqlDataReader["nombreUsuario"].ToString().Trim(),
                     Apellido = sqlDataReader["apellido"].ToString().Trim(),
                     Usuario = sqlDataReader["usuario"].ToString().Trim(),
-                    ActivoCliente = bool.Parse(sqlDataReader["usuario"].ToString().Trim()),
+                    ActivoCliente = bool.Parse(sqlDataReader["activoUsuario"].ToString().Trim()),
                     Ciudad = sqlDataReader["ciudad"].ToString().Trim(),
                     Contrasena = sqlDataReader["contrasena"].ToString().Trim(),
-                    Correo = sqlDataReader["corre"].ToString().Trim(),
+                    Correo = sqlDataReader["correo"].ToString().Trim(),
                     Direccion = sqlDataReader["direccion"].ToString().Trim(),
-                    FechaCliente = DateTime.Parse(sqlDataReader["fechaCliente"].ToString().Trim()),
+                    FechaCliente = DateTime.Parse(sqlDataReader["fechaUsuario"].ToString().Trim()),
                     Telefono = sqlDataReader["telefono"].ToString().Trim()
                 };
             }
@@ -76,7 +74,7 @@ namespace Datos
             return cliente;
 
         }
-    }
+
 
         //public void BuscarCliente(Entidades.Cliente clienteList)
         //{
@@ -174,6 +172,7 @@ namespace Datos
         }
     }
 }
+
 
 //        public Entidades.Cliente BuscarIdCliente(string Documento)
 //        {
